@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adicione sua receita</title>
+    <link rel="stylesheet" href="/css/container-main.css">
+    <link rel="stylesheet" href="/css/header-main.css">
+    <link rel="stylesheet" href="/css/form-container.css">
+    <link rel="stylesheet" href="/css/section-bar.css">
+    <link rel="stylesheet" href="/css/index/btns.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body class="container-main">
+    <%- include("parts/header-pages", {subTitle:"Crie, Adicione e Invente suas Proprias Receitas"}) %> 
+    <main class="form-container">
+              
+        <form action="/create.html" id="form-create" method="post">
+            <h1>Receita</h1>
+            <fieldset class="box-field">
+                <legend>foto de capa</legend>
+                <input class="input-name" id="capa" name="capa" autocomplete="off" type="text" placeholder="https://">
+            </fieldset>
+            <fieldset class="box-field">
+                <legend>nome da receita</legend>
+                <input class="input-name" name="title" id="title" autocomplete="off" type="text">
+            </fieldset>
+            <fieldset class="box-field">
+                <legend>ingredientes</legend>
+                <select name="ingredients" id="ingredients">
+                    <%- include("parts/options")  %>
+                </select>
+                <a class="btn-add" onclick="addIngredient()"><img class="imgIcon" src="/images/icones/add.png" alt="" srcset=""></a>
+            </fieldset>
+                <div id="camp-Select-Ingredients">
+
+                </div>
+            <div class="boxInput-preparo">
+                <textarea class="input-preparo" type="text" placeholder="modo de preparo" name="modo" id="modo"></textarea>
+            </div>
+            <input name="ingredientsOn" id="ingredientsOn" autocomplete="off" type="text">
+            <div class="container-btns">
+                <button onclick="saveIngredients()"  class="btn-submit" type="submit" form="form-create">adicionar</button>
+                <a class="btn-cancel" href="/"> cancel</a>
+            </div>
+        </form>
+    </main>
+    <script src="/scripts/create.js"></script>
+</body>
+</html>

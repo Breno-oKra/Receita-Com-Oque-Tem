@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita Com oque tem</title>
+    <link rel="stylesheet" href="/css/container-main.css">
+    <link rel="stylesheet" href="/css/header-main.css">
+    <link rel="stylesheet" href="/css/containeir-Content.css">
+    <link rel="stylesheet" href="/css/container-card.css">
+    <link rel="stylesheet" href="/css/card-receitas.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/Container-user.css">
+    <link rel="stylesheet" href="/css/index/imgs.css">
+    <link rel="stylesheet" href="/css/index/btns.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body class="container-main">
+    <header class="header-main">
+        <h1 class="titleMain">Receitas Com oque Tem</h1>
+        <div class="header-receita">      
+            <img class="img-last-receita" src=<%= lastReceita.capa %> alt="">
+            <div class="box-last-receita">
+                <p class="subtitleMain">ultima receita vista</p>
+                <p><%= lastReceita.title %></p>
+            </div>
+        </div>
+        <a class="btn-sectionUser" onclick="containerUser()"><img src="/images/icones/menu.png" alt="" srcset=""></a>
+    </header>
+    <main class="containeir-Content">
+        <div class="align-Container-Content">
+            <div class="Container-navegation">
+                <a id="btn-disponivel" onclick="OnOff('receitasDisponiveis')" >
+                    <p>disponivel</p>
+                </a>
+                
+                <a id="btn-loja" onclick="OnOff('receitasLoja')">
+                    <p>receitas</p>
+                </a>
+            </div>
+       
+            <div id="receitasLoja" class="container-card-loja">
+                <h1 class="titleCamps"> receitas da net</h1>
+                <div class="align-cards">      
+                    <% receitasLoja.forEach(item => { %>
+                        <%- include("parts/cards", {item})  %>        
+                    <% }) %>
+                </div>
+            </div>
+            <!-- receitas disponiveis -->
+            <div id="receitasDisponiveis" class="container-card-disponivel">
+                <h1 class="titleCamps"> receitas disponiveis com os ingredientes presente no armario</h1>
+                <div class="align-cards"> 
+                    <% disponiveis.forEach(item => { %> 
+                        <%- include("parts/cards", {item})  %>    
+                    <% }) %> 
+                </div>      
+            </div>
+            <!-- minhas receitas -->
+            <div id="myReceitas" class="container-card-mine">
+                <h1 class="titleCamps">Suas Receitas</h1>
+                <div class="align-cards">
+                    <a href="/create.html" class="cardAdd">
+                        <img class="img-cards-add" src="/images/icones/add.png" alt="" srcset="">
+                    </a> 
+                    <% myReceitas.forEach(item => { %> 
+                        <div class="cards">                
+                            <img class="img-cards-header" src=<%= item.capa %> alt="" srcset="">
+                            <div class="box-btns-edits">
+                                <a href="/editCreate.html/<%= item.id %>" class="imgs-edit-icon" ><img  src="/images/icones/edit.png" alt="" srcset=""></a>
+                                <button type="submit" class="imgs-del-icon" form="delete-job-<%= item.id %>"><img  src="/images/icones/delete.png" alt="" srcset=""> <form 
+                                    method="post" 
+                                    action="/delete/<%= item.id %>" 
+                                    id="delete-job-<%= item.id %>"></form>
+                                </button> 
+                            </div>
+                            <div class="info-cards">
+                                <div class="box-title-receita">
+                                    <p class="title-receita"><%= item.title %></p>
+                                    <a href="/seeReceita/<%= item.id %>+myReceitas" class="btn-see-receita"><img src="/images/icones/visibility.png" alt="" srcset=""></a>
+                                </div>
+                                
+                                <p class="tag-ingredientes">ingredientes</p>
+                                <div class="ingredients">
+                                    <% item.ingredients.forEach(item => { %>
+                                        <p><%= item.replace(/_/g," ")  %> </p>
+                                    <% }) %>
+                                    
+                                </div>
+                            </div>
+                        </div>      
+                    <% }) %> 
+                </div>
+            </div>
+        </div>
+        <div class="Container-user">
+            <%- include("parts/perfil.ejs", {qtdDisponiveis,qtdMineReceitas,qtdIngredits,fun:"onModal()",camp:"myReceitas",data:profile}) %>
+        </div>
+       
+    </main>
+    
+    <div class="modal">
+        <div class="alignModal">
+            <h2>Seus ingredientes</h2>
+            <a class="btn-sectionModal" onclick="onModal()"><img src="/images/icones/backHome.png" alt="" srcset=""></a>
+            <div class="containerModal">        
+                <% myIngrediets.forEach(item => { %> 
+                    <div class="mineingredients">
+                        <p class="text-ingredients"><%= item.replace(/_/g," ")  %> </p>
+                    </div>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+    <div class="modal-user">
+        <div class="align-modalUser">
+            <%- include("parts/perfil.ejs", {qtdDisponiveis,qtdMineReceitas,qtdIngredits,fun:"onModalSection()",camp:"myReceitasModal",data:profile}) %>
+        </div>
+         
+    </div>
+</body>
+<script src="/scripts/OnOff.js"></script>
+<script src="/scripts/modal.js"></script>
+</html>

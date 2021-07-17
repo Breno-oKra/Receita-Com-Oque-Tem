@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/container-main.css">
+    <link rel="stylesheet" href="/css/header-main.css">
+    <link rel="stylesheet" href="/css/profile/container.css">
+    <link rel="stylesheet" href="/css/profile/inputs.css">
+</head>
+<body class="container-main">
+    <%- include("parts/header-pages", {subTitle:"Monte Seu Perfil"}) %>
+    <div class="container">
+        <div class="header-User">
+            <img class="img-user" src=<%= data.avatar %> alt="" srcset="">
+            <div class="align-infos">  
+                <p class="name-user"><%= data.name  %> </p>
+                <textarea class="text-sobre-header" name="" id="" cols="30" rows="10" disabled="true"><%= data.about %></textarea>
+            </div>
+       
+        </div>
+        <form action="/profile"  id="container-form" method="post">
+            <fieldset class="box-inputs">
+                <legend>Nome</legend>
+                <input name="name" class="inputs" type="text" value="<%= data.name %>">
+            </fieldset>
+            <fieldset class="box-inputs">
+                <legend>avatar</legend>
+                <input class="inputs" name="avatar" type="text" placeholder="http://" value="<%= data.avatar %>">
+            </fieldset>
+            <fieldset class="box-inputs">
+                <legend>email</legend>
+                <input class="inputs" name="email" type="email" value="<%= data.email %>">
+            </fieldset>
+            <div class="box-area">
+                    <legend>sobre</legend>
+                <textarea class="text-sobre-input" type="text" name="about" maxlength="400" name="about">
+                    <%= data.about %>
+                </textarea>
+            </div>
+            <button type="submit" form="container-form" class="btn-submit">salvar</button>
+        </form>
+            
+    </div>
+</body>
+</html>

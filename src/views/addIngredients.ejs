@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adicione seus ingredientes</title>
+    <link rel="stylesheet" href="/css/container-main.css"/>
+    <link rel="stylesheet" href="/css/header-main.css">
+    <link rel="stylesheet" href="/css/form-ingredients/form-container.css">
+    <link rel="stylesheet" href="/css/form-ingredients/inputs.css">
+    <link rel="stylesheet" href="/css/form-ingredients/btns.css">
+    <link rel="stylesheet" href="/css/form-ingredients/imgStyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+</head>
+<body class="container-main">
+    <%- include("parts/header-pages", {subTitle:"Adicione Mais Ingredients ao Seu Carrinho"}) %>
+    <main class="form-container">
+        
+        <form action="/addIngredients.html" id="form-create" method="post">
+            <div class="img-icon-top">
+                <img  src="/images/icones/cartShop.png" alt="" srcset=""> 
+            </div>         
+            <input id="myingredients" name="myingredients" value=<%= ingredients %> />
+            <input id="deletados" name="deletados" /> 
+            <fieldset class="box-field">
+                <legend>ingredientes</legend>
+                <select name="" id="ingredients">
+                    <%- include("parts/options")  %>
+                </select>
+                <a class="btn-add" onclick="addIngredient()"><img class="imgIcon" src="/images/icones/add.png" alt="" srcset=""></a>
+                
+            </fieldset>  
+            <div id="camp-Select-Ingredients">
+            </div>    
+        </form>  
+        <div class="container-btns">
+            <input onclick="saveIngredients()"  class="btn-submit" type="submit" form="form-create" value="Adicionar"></input>
+            <a  href="/" class="btn-cancel" type="button" >cancelar</a>
+        </div>    
+    </main>
+    <script src="/scripts/addIngredients.js"></script>
+</body>
+</html>

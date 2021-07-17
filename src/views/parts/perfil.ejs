@@ -1,0 +1,36 @@
+<a class="btn-sectionOff" onclick="containerUser()"><img src="/images/icones/menu_black.png" alt="" srcset=""></a>
+
+<div class="profile">
+    <img class="img-user" src=<%= data.avatar %> alt="" srcset="">
+    <div class="box-profile">     
+        <p class="textAbout"><%= data.about.substr(0,100) %>...</p>
+        <a class="btn-profile" href="./profile">ver perfil</a>
+    </div>
+</div>   
+<p class="name-user"><%= data.name %></p>
+<div class="box-user">
+    
+    <div class="container-infos-user">
+        <div class="box-infos">
+            adicionadas
+            <p class="info-number"><%= qtdMineReceitas %> </p>
+        </div class="box-infos">
+        <div class="box-infos">
+            disponiveis
+            <p class="info-number"><%= qtdDisponiveis %></p>
+        </div>
+        <div class="box-infos">
+            ingredients
+            <p class="info-number"><%= qtdIngredits %></p>
+        </div>
+    </div>
+</div>
+<div class="container-btn">
+    <a id="btn-mine" onclick="OnOff('<%= camp %>')">
+        <img class="img-icons" src="/images/icones/receitas.png" alt="">
+    </a>
+    <a href="/addIngredients.html" class="add-igredients"><img class="img-icons" src="/images/icones/cartShop.png" alt=""></a>
+    <div onclick=<%= fun %> class="btn-add-ingredients">
+        <img class="img-icons" src="/images/icones/ingredients.png" alt="">
+    </div>
+</div>

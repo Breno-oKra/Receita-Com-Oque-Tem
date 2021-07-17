@@ -1,0 +1,44 @@
+.containeir-Content{
+    width:100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.align-Container-Content{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+}
+.Container-navegation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    width: 40%;
+    height: 45px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.titleCamps{
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(214, 212, 212, 0.678);
+    font-size: 1.2rem;
+
+    
+}
+@media (max-width: 800px)
+{
+    .align-Container-Content{
+        width:90%;
+    }
+    .Container-navegation{
+        width: 80%;
+    }
+}
+

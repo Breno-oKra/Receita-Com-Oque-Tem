@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/container-main.css">
+    <link rel="stylesheet" href="/css/header-main.css">
+    <link rel="stylesheet" href="/css/seeReceita/containers.css">
+    <link rel="stylesheet" href="/css/seeReceita/imgs.css">
+    <title>Preparo</title>
+</head>
+<body class="container-main">
+    <%- include("parts/header-pages", {subTitle:"Veja o Passo a Passo da Receita"}) %> 
+    <div class="container">
+        <div class="aling-Container">
+            <div class="containerCapa">
+                <img class="imgCapa" src= <%= obj.capa %> alt="" srcset="">
+            </div>
+            <h2 class="title"> <%= obj.title %> </h2>
+            <div class="container-TextArea">
+                <textarea class="modo" name="text" id="" disabled="true"><%= obj.modo %></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/scripts/seeReceitas.js"></script>
+</html>

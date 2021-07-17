@@ -1,0 +1,36 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+}
+.aling-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+}
+.containerCapa{
+    width: 650px;;
+    height:300px;
+    background-color: aqua;
+}
+.container-TextArea{
+    width:90%;
+}
+@media (max-width: 800px)
+{
+    .aling-Container{
+        width: 90%;
+    }
+    .containerCapa{
+        width: 90%;
+        height:200px;
+        background-color: aqua;
+    }
+}

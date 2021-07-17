@@ -1,0 +1,40 @@
+.text-sobre-header{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40%;
+    max-height:80%;
+    background-color:rgb(243, 243, 243) ;
+    border: none;
+    font-size: 1.5rem;
+}
+.box-inputs{
+    width: 70%;
+    height: 90px;
+    border: none;
+    
+}
+.text-sobre-input{
+    max-width: 90%;
+    min-width:90%;
+    min-height: 200px;
+    max-height: 200px;
+    padding: 5px;
+}
+.text-sobre-input:focus{
+    outline: 0;
+}
+
+.inputs{
+    width: 90%;
+    height: 50px;
+    background-color:#fff;
+    border: none;
+    font-size: 1.5rem;
+    padding-left: 20px;
+    border-left: 10px solid #e74c3c;
+    color: rgb(165, 165, 165);
+}
+.inputs:focus{
+    outline: 0;
+    box-shadow: 0 0 0;
+}

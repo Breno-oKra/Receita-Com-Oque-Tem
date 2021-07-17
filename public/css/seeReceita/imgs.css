@@ -1,0 +1,28 @@
+.imgCapa{
+    width: 100%;
+    height: 100%;
+}
+.title{
+    width:80%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+}
+.modo{
+    min-width:100%;
+    max-width: 100%;
+    min-height: 500px;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+}
+.modo:focus{
+    outline: 0;
+    box-shadow: 0 0 0 ;
+}
+.values{
+    opacity: 0;
+}

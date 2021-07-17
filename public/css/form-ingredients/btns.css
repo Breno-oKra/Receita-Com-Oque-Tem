@@ -1,0 +1,57 @@
+.container-btns{
+    width:150px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction:column;
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
+    background-color: rgb(243, 243, 243);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.btn-add{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height: 60%;
+    margin-left: 15px;
+    background-color:#e74c3c;
+    border-radius: 100px;
+
+}
+.btn-submit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:120px;
+    height:30%;
+    border:none;
+    background-color: #91eb67;
+    border-radius: 10px;
+    color: #fff;
+}
+.btn-cancel{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:120px;
+    height:30%;
+    text-decoration: none;
+    border: 3px solid #e74c3c ;
+    border-radius: 10px;
+    color: #e74c3c;
+}
+.btn-cancel:hover{
+    opacity: 0.8;
+}
+.btn-submit:hover{
+    opacity: 0.8;
+}
+.btn-submit:focus{
+    box-shadow: 0 0 0;
+    outline:0;
+}

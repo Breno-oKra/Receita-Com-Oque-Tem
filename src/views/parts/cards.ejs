@@ -1,0 +1,17 @@
+<div class="cards">
+    <img class="img-cards-header" src=<%= item.capa %> alt="" srcset="">
+    <div class="info-cards">
+        <div class="box-title-receita">
+            <p class="title-receita"><%= item.title %></p>
+            <a href="/seeReceita/<%= item.id %>" class="btn-see-receita"><img src="/images/icones/visibility.png" alt="" srcset=""></a>
+        </div>
+        
+        <p class="tag-ingredientes">ingredientes</p>
+        <div class="ingredients">
+            <% item.ingredients.forEach(item => { %>
+                <p><%= item.replace(/_/g," ")  %> </p>
+            <% }) %>
+            
+        </div>
+    </div>
+</div>   
